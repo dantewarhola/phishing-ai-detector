@@ -113,6 +113,32 @@ The web UI will launch at: `http://localhost:8501`
 2. Enable **Developer Mode**
 3. Click **Load Unpacked** and select the `chrome-extension/` folder
 
+
+## 🐳 Running the Project with Docker
+
+This project includes a Dockerfile to run both the backend API (FastAPI) and frontend UI (Streamlit) together inside a single container.
+
+### 🔧 Build the Docker Image
+
+From the root of the project:
+
+```bash
+docker build -t phishing-ai .
+```
+
+### ▶️ Run the Docker Container
+
+```bash
+docker run -p 8000:8000 -p 8501:8501 phishing-ai
+```
+
+This will expose:
+- **FastAPI API** at `http://localhost:8000`
+- **Streamlit UI** at `http://localhost:8501`
+
+Make sure Docker Desktop is running before building or launching the container.
+
+
 ### Usage
 
 - Highlight any suspicious text on a website
@@ -150,7 +176,7 @@ All steps are documented in `notebook/phishing_detector.ipynb`.
 **Dante Warhola**  
 University of Pittsburgh — Computer Science  
 Powerlifting Club Business Manager | Cybersecurity Enthusiast  
-[LinkedIn](https://www.linkedin.com) | [GitHub](https://github.com)
+[LinkedIn](https://www.linkedin.com/in/dante-warhola/) | [GitHub](https://github.com/dantewarhola)
 
 ---
 
@@ -160,27 +186,3 @@ This project is licensed under the MIT License.
 
 
 ---
-
-## 🐳 Running the Project with Docker
-
-This project includes a Dockerfile to run both the backend API (FastAPI) and frontend UI (Streamlit) together inside a single container.
-
-### 🔧 Build the Docker Image
-
-From the root of the project:
-
-```bash
-docker build -t phishing-ai .
-```
-
-### ▶️ Run the Docker Container
-
-```bash
-docker run -p 8000:8000 -p 8501:8501 phishing-ai
-```
-
-This will expose:
-- **FastAPI API** at `http://localhost:8000`
-- **Streamlit UI** at `http://localhost:8501`
-
-Make sure Docker Desktop is running before building or launching the container.
