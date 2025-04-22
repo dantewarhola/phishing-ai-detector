@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Phish‑AI Detector",
+    "version": "0.1.0",
+    "description": "Flags phishing emails in Gmail via the local Phish‑AI API",
+    "permissions": ["storage"],
+    "host_permissions": [
+      "https://mail.google.com/*",
+      "http://localhost:8000/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://mail.google.com/*"],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+      }
+    ]
+  }
+  

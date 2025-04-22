@@ -1,19 +1,19 @@
-# Use a minimal Python runtime
-FROM python:3.11-slim
 
-# Set the working directory
+# Use an official Python image
+FROM python:3.10-slim
+
+# Set working directory
 WORKDIR /app
 
-# 1. Copy & install only the API dependencies
-COPY requirements-api.txt .
-RUN pip install --no-cache-dir -r requirements-api.txt
+# Copy project files
+COPY . .
 
-# 2. Copy your application code and the trained models
-COPY src/    src/
-COPY models/ models/
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
-# 3. Expose the port FastAPI will run on
+# Expose ports for FastAPI and Streamlit
 EXPOSE 8000
+EXPOSE 8501
 
-# 4. Start the server
-CMD ["uvicorn", "src.api:app", "--host", "0.0.0.0", "--port", "8000"]
+# Start both backend and frontend using a shell script
+CMD ["bash", "-c", "uvicorn src.api:app --host 0.0.0.0 --port 8000 & streamlit run ui/app.py --server.port 8501"]
