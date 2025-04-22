@@ -175,7 +175,7 @@ All steps are documented in `notebook/phishing_detector.ipynb`.
 
 **Dante Warhola**  
 University of Pittsburgh — Computer Science  
-Powerlifting Club Business Manager | Cybersecurity Enthusiast  
+Pi Kappa Phi Risk Manager | Cybersecurity Enthusiast  
 [LinkedIn](https://www.linkedin.com/in/dante-warhola/) | [GitHub](https://github.com/dantewarhola)
 
 ---
