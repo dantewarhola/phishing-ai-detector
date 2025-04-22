@@ -1,0 +1,9 @@
+# requirements-api.txt
+fastapi
+uvicorn
+joblib
+pandas
+scikit-learn
+bs4
+nltk
+pyarrow

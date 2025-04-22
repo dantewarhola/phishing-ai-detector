@@ -1,0 +1,8 @@
+# Ignore virtualenv, data, notebooks, UI, git, etc.
+.venv/
+data/
+ui/
+notebooks/
+__pycache__/
+*.pyc
+.git/
